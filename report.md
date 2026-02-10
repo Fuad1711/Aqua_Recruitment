@@ -84,7 +84,7 @@ Example prediction:
 ## Performance Evaluation
 All training performance graphs are in `results.png`:
 
-![Training and Evaluation Results](problem-3-ml/output/results.png)
+![Training and Evaluation Results](problem-3-ml/performanceGraphs/results.png)
 
 **Validation Metrics Summary:**
 
