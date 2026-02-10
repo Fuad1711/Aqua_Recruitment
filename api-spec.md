@@ -11,11 +11,7 @@ The backend is built using **Native Node.js** and manages telemetry data in a **
 ---
 
 ## 📍 Base URL
-```
-
-[http://localhost:3000](http://localhost:3000)
-
-````
+`http://localhost:3000`
 
 ---
 
