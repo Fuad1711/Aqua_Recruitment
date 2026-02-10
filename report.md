@@ -10,6 +10,29 @@ This repository contains solutions for the Aqua Software recruitment tasks:
 This report summarizes the **dataset, methodology, implementation, and results** for the telemetry and ML tasks.
 
 ---
+## Problem 1: ROV Control Mission - Technical Analysis
+
+### A. Movement Logic: Differential Steering
+The ROV utilizes **Differential Steering** (Tank Drive) to maneuver. This allows the vehicle to turn by varying the speeds of the left and right thrusters independently.
+* **Forward/Backward:** Both motors run at the same speed and direction.
+* **Turning:** Motors run in opposite directions (e.g., Left Forward, Right Backward) to allow the ROV to pivot on its central axis.
+* **Joystick Mixing:** For the continuous control (Part B), I implemented a mixing algorithm to translate the 2-axis joystick input ($X, Y$) into motor speeds ($L, R$):
+  - $LeftMotor = Y + X$
+  - $RightMotor = Y - X$
+  *(Note: Values were constrained to the hardware range of -1024 to 1024.)*
+
+
+
+### B. Ballast System & Buoyancy Challenges
+The ROV controls depth via an **Injector/Ejector Pump** system rather than vertical thrusters. This simulates a real-world ballast tank.
+* **Descend:** `injectorPump(speed)` adds water mass, increasing the ROV's density to sink.
+* **Ascend:** `ejectorPump(speed)` removes water mass, decreasing density to float.
+
+### C. Limitation: Lack of Active Neutral Buoyancy Control
+A significant observation made during implementation is the **absence of a dedicated "Neutral Buoyancy" or "Brake" function** within the provided Hardware API.
+* **The Issue:** While the system stops the pump motors when the button is released, there is no parameter or function provided to lock the ballast at a specific volume or reverse the pump slightly to achieve immediate neutral buoyancy.
+* **Impact:** As a result, once the ROV begins to sink or float, it may continue to drift due to momentum and the remaining water level in the tank until a manual counter-adjustment is made by the pilot.
+* **Proposed Solution:** In a real-world deployment, I would recommend a PID controller that monitors depth and automatically toggles the pumps in short bursts to maintain a fixed depth (Station Keeping).
 
 ## Problem 2: ROV Telemetry Monitoring System
 
