@@ -1,8 +1,3 @@
-Absolutely! Here’s a **complete, polished `api-spec.md`** for your ROV Telemetry API in full Markdown, ready to use. I’ve included **all endpoints, example requests/responses, validation rules, and pressure alerts** so it’s comprehensive.
-
----
-
-```markdown
 # ROV Telemetry API Specification
 
 This specification defines the REST API used for the **Remotely Operated Vehicle (ROV)** telemetry monitoring system.  
