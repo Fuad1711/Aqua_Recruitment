@@ -77,14 +77,14 @@ The target classes are: **bottle, polythene, styrofoam**.
 
 Example prediction:
 
-![Example Prediction](outputs/inference/example1.jpg)
+![Example Prediction](problem-3-ml/output/img_09b84e641e8a4a8babe458990bc2652f_jpg.rf.3efd8c61a74515f8a7b63bdc172f4fb6.jpg)
 
 ---
 
 ## Performance Evaluation
 All training performance graphs are in `results.png`:
 
-![Training and Evaluation Results](outputs/results.png)
+![Training and Evaluation Results](problem-3-ml/output/results.png)
 
 **Validation Metrics Summary:**
 
