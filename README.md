@@ -27,41 +27,29 @@ Aqua_Recruitment/
 ├── README.md                 
 └── .gitignore
 ```
-🚀 Getting Started  
+## 🚀 Getting Started
 
-1. Control Mission (Problem 1)
+### 1. Control Mission (Problem 1)
 To test the ROV maneuverability:
+- Navigate to `problem-1-control/` and open `index.html`.
+- Use the UI buttons or virtual joystick to test Tank Drive logic.
 
-Navigate to problem-1-control/.
-
-Open index.html in any modern web browser.
-
-Controls: Use the UI buttons or the virtual joystick to test Differential Steering (Tank Drive).
-
-2. Telemetry Dashboard (Problem 2)
+### 2. Telemetry Dashboard (Problem 2)
 To run the live data monitoring system:
+1. Open terminal in `problem-2-telemetry/backend` and run `node server.js`.
+2. Open `problem-2-telemetry/frontend/index.html` to view the live chart and status alerts.
 
-Backend: ```bash cd problem-2-telemetry/backend node server.js
+### 3. AI Waste Detection (Problem 3)
+- Detailed analysis and training results are documented in `problem-3-ml/report.md`.
 
-Frontend: Open problem-2-telemetry/frontend/index.html in your browser. The dashboard polls the server every 5 seconds to update sensor readings and the depth chart.
+---
 
-3. AI Waste Detection (Problem 3)
-Detailed analysis, training results, and marine environmental considerations are documented in problem-3-ml/report.md.
+## 🛠 Technical Highlights
 
-Detection samples can be found in the /outputs directory.
+* **Differential Steering**: Implemented axis mixing ($V_{left} = Y + X$) for smooth navigation.
+* **Native Node.js API**: Zero-dependency REST API featuring a FIFO in-memory buffer.
+* **Dark Mode Dashboard**: Optimized high-contrast UI using CSS Grid and Chart.js.
+* **AI Pipeline**: Custom YOLO model for detecting underwater plastic and styrofoam.
 
-🛠 Technical Highlights
-Differential Steering: Implemented axis mixing for smooth tank-drive navigation.
-
-Native Node.js API: Developed a zero-dependency server using core http and url modules, featuring a FIFO in-memory buffer for telemetry history.
-
-High-Contrast Dashboard: A custom-styled dark-mode interface optimized for low-light ROV control rooms.
-
-Robust ML Pipeline: Trained a custom model to detect bottle, polythene, and styrofoam in high-turbidity underwater environments.
-
-👨‍💻 Submission Details
-Developer: [Your Name]
-
-Repository: https://github.com/Fuad1711/Aqua_Recruitment.git
-
-Frameworks used: Node.js, Chart.js, Ultralytics (YOLO), Roboflow.
+## 👨‍💻 Submission Details
+* **Repository**: [https://github.com/Fuad1711/Aqua_Recruitment](https://github.com/Fuad1711/Aqua_Recruitment)
