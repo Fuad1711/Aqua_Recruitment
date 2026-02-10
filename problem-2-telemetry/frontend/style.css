@@ -1,0 +1,106 @@
+:root {
+    --bg-dark: #0f172a;
+    --card-dark: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #38bdf8;       /* Light Blue */
+    --success: #22c55e;      /* Green */
+    --warning: #f59e0b;      /* Orange */
+    --danger: #ef4444;       /* Red */
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    padding: 2rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 1rem;
+}
+
+h1 { margin: 0; font-size: 1.8rem; }
+.subtitle { margin: 0; color: var(--text-muted); font-size: 0.9rem; }
+
+.status-box {
+    text-align: right;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #334155;
+    background: #020617;
+    transition: all 0.3s ease;
+}
+
+.label { display: block; font-size: 0.7rem; color: var(--text-muted); letter-spacing: 1px; }
+#status-text { font-weight: bold; font-size: 1.1rem; }
+
+.status-normal { color: var(--success); border-color: var(--success); }
+.status-warning { color: var(--warning); border-color: var(--warning); }
+.status-critical { 
+    color: var(--danger); 
+    border-color: var(--danger); 
+    background-color: rgba(239, 68, 68, 0.1);
+    animation: flash 1s infinite;
+}
+
+@keyframes flash {
+    0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background: var(--card-dark);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card h3 { margin: 0 0 0.5rem 0; color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; }
+
+.reading { font-size: 2.5rem; font-weight: 700; color: var(--accent); }
+.unit { font-size: 1rem; color: var(--text-muted); font-weight: normal; }
+
+.chart-section {
+    background: var(--card-dark);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.chart-header h3 { margin: 0; }
+.timestamp { color: var(--text-muted); font-family: monospace; }
+
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
